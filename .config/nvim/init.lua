@@ -1,3 +1,4 @@
+vim.g.mapleader = " "
 vim.wo.number = true
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
@@ -10,3 +11,4 @@ vim.keymap.set('n', 'ge', vim.diagnostic.goto_next, bufopts)
 
 require('plugins')
 require('lsp')
+require('tele')
