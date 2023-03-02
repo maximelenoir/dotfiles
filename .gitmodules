@@ -1,9 +1,3 @@
 [submodule ".config/nvim/site/pack/packer/start/packer.nvim"]
 	path = .config/nvim/site/pack/packer/start/packer.nvim
 	url = https://github.com/wbthomason/packer.nvim
-[submodule "packer.nvim"]
-	path = packer.nvim
-	url = https://github.com/wbthomason/packer.nvim
-[submodule "/Users/maxime/.local/share/nvim/site/pack/packer/start/packer.nvim"]
-	path = /Users/maxime/.local/share/nvim/site/pack/packer/start/packer.nvim
-	url = https://github.com/wbthomason/packer.nvim
