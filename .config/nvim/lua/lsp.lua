@@ -22,11 +22,11 @@ local cmp_caps = require('cmp_nvim_lsp').default_capabilities()
 
 local on_attach = function(client, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
-    vim.keymap.set('n', '<F12>', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', '<C-i>', vim.lsp.buf.format, bufopts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     vim.keymap.set('n', '<space>', vim.lsp.buf.hover, buftopts)
+    vim.api.nvim_buf_create_user_command(bufnr, "Rename", function() vim.lsp.buf.rename() end, {})
+    vim.api.nvim_buf_create_user_command(bufnr, "Format", function() vim.lsp.buf.format() end, {})
 end
 
 require('lspconfig').rust_analyzer.setup({
