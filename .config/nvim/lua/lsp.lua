@@ -1,3 +1,25 @@
+local cmp = require('cmp')
+cmp.setup({
+	snippet = {
+		expand = function(args)
+			vim.fn["vsnip#anonymous"](args.body)
+		end,
+	},
+	window = {
+	},
+	mapping = cmp.mapping.preset.insert({
+		['<CR>'] = cmp.mapping.confirm({ select = true }),
+	}),
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' },
+		{ name = 'vsnip' },
+	}, {
+		{ name = 'buffer' },
+	})
+})
+
+local cmp_caps = require('cmp_nvim_lsp').default_capabilities()
+
 local on_attach = function(client, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', '<F12>', vim.lsp.buf.definition, bufopts)
@@ -8,8 +30,9 @@ local on_attach = function(client, bufnr)
 end
 
 require('lspconfig').rust_analyzer.setup({
-    on_attach = on_attach,
-    settings = {
-        ["rust-analyzer"] = {}
-    }
+	capabilities = cmp_caps,
+	on_attach = on_attach,
+	settings = {
+		["rust-analyzer"] = {}
+	}
 })
