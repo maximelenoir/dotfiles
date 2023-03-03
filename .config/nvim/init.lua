@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.cmd([[colorscheme slate]])
 vim.wo.number = true
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
