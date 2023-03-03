@@ -1,5 +1,5 @@
-vim.cmd([[colorscheme slate]])
-vim.g.mapleader = ";"
+vim.cmd([[colorscheme habamax]])
+vim.g.mapleader = ';'
 vim.wo.number = true
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
