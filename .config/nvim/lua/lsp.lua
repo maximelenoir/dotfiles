@@ -21,6 +21,10 @@ cmp.setup({
             winhighlight = 'Normal:Pmenu,FlatBorder:Pmenu,Search:None',
             col_offset = -3,
             side_padding = 0,
+            border = 'rounded',
+        },
+        documentation = {
+            border = 'rounded',
         },
 	},
 	mapping = cmp.mapping.preset.insert({
@@ -52,3 +56,5 @@ require('lspconfig').rust_analyzer.setup({
 		['rust-analyzer'] = {}
 	}
 })
+
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
