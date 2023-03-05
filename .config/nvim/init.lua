@@ -14,3 +14,17 @@ vim.keymap.set('n', 'ge', vim.diagnostic.goto_next, bufopts)
 require('plugins')
 require('lsp')
 require('tele')
+
+require('lualine').setup({
+    options = {
+        theme = 'material',
+    },
+    sections = {
+        lualine_a = { 'mode' },
+        lualine_b = { 'filename', 'location', 'progress' },
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = { 'buffers' },
+    }
+})
