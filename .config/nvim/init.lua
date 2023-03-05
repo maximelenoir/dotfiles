@@ -28,3 +28,7 @@ require('lualine').setup({
         lualine_z = { 'buffers' },
     }
 })
+
+require('nvim-tree').setup({})
+
+vim.keymap.set('n', '<leader>tt', function() vim.cmd('NvimTreeToggle') end, {})
