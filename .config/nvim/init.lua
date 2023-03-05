@@ -8,8 +8,8 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.smartindent = true
 
-vim.keymap.set('n', 'gE', vim.diagnostic.goto_prev, bufopts)
-vim.keymap.set('n', 'ge', vim.diagnostic.goto_next, bufopts)
+vim.keymap.set('n', 'gE', vim.diagnostic.goto_prev, {})
+vim.keymap.set('n', 'ge', vim.diagnostic.goto_next, {})
 
 require('plugins')
 require('lsp')
@@ -30,5 +30,13 @@ require('lualine').setup({
 })
 
 require('nvim-tree').setup({})
+
+require('material').setup({
+    plugins = {
+        'nvim-cmp',
+        'nvim-tree',
+        'telescope',
+    },
+})
 
 vim.keymap.set('n', '<leader>tt', function() vim.cmd('NvimTreeToggle') end, {})
