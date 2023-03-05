@@ -1,4 +1,5 @@
-vim.cmd([[colorscheme habamax]])
+vim.g.material_style = 'palenight'
+vim.cmd('colorscheme material')
 vim.g.mapleader = ';'
 vim.wo.number = true
 vim.opt.expandtab = true
