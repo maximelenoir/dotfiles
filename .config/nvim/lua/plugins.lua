@@ -15,4 +15,14 @@ return require('packer').startup(function(use)
     use 'marko-cerovac/material.nvim'
     use 'famiu/bufdelete.nvim'
     use 'nvim-treesitter/nvim-treesitter'
+    use {
+        'folke/trouble.nvim',
+        requires = 'nvim-tree/nvim-web-devicons',
+        config = function()
+            require('trouble').setup({
+                auto_open = true,
+                auto_close = true,
+            })
+        end
+    }
 end)
