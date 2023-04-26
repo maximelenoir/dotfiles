@@ -24,7 +24,7 @@ require('lualine').setup({
     },
     sections = {
         lualine_a = { 'mode' },
-        lualine_b = { 'filename', 'location', 'progress' },
+        lualine_b = {{ 'filename', path = 1 }, 'location', 'progress' },
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
