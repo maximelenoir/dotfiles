@@ -1,5 +1,3 @@
-vim.g.material_style = 'palenight'
-vim.cmd('colorscheme material')
 vim.g.mapleader = ';'
 vim.wo.number = true
 vim.opt.expandtab = true
@@ -11,6 +9,9 @@ vim.opt.smartindent = true
 require('plugins')
 require('lsp')
 require('tele')
+
+vim.g.material_style = 'palenight'
+vim.cmd('colorscheme material')
 
 require('lualine').setup({
     options = {
