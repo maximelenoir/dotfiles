@@ -14,4 +14,5 @@ return require('packer').startup(function(use)
     use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' } }
     use 'marko-cerovac/material.nvim'
     use 'famiu/bufdelete.nvim'
+    use 'nvim-treesitter/nvim-treesitter'
 end)
