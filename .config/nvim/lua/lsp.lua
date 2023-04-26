@@ -58,4 +58,9 @@ require('lspconfig').rust_analyzer.setup({
 	}
 })
 
+require('lspconfig').pyright.setup({
+	capabilities = cmp_caps,
+	on_attach = on_attach,
+})
+
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
