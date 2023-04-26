@@ -3,4 +3,6 @@ alias qq="exit"
 alias rgrep="grep -R"
 alias vim="nvim"
 export PATH=/opt/local/libexec/gnubin:$(dirname $(rustup which rust-analyzer)):$PATH
-source .zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# source .zsh-autocomplete/zsh-autocomplete.plugin.zsh
+autoload -U compinit
+compinit
