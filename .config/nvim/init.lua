@@ -12,6 +12,7 @@ vim.keymap.set('n', 'gE', vim.diagnostic.goto_prev, {})
 vim.keymap.set('n', 'ge', vim.diagnostic.goto_next, {})
 vim.keymap.set('n', '<C-n>', function() vim.cmd("bnext") end, {})
 vim.keymap.set('n', '<C-S-n>', function() vim.cmd("bprevious") end, {})
+vim.keymap.set('n', '<leader>bd', function() vim.cmd("Bdelete") end, {})
 
 require('plugins')
 require('lsp')
