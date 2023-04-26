@@ -46,6 +46,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     vim.keymap.set('n', '<space>', vim.lsp.buf.hover, buftopts)
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, buftopts)
     vim.api.nvim_buf_create_user_command(bufnr, 'Rename', function() vim.lsp.buf.rename() end, {})
     vim.api.nvim_buf_create_user_command(bufnr, 'Format', function() vim.lsp.buf.format() end, {})
 end

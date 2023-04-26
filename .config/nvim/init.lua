@@ -8,12 +8,6 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.smartindent = true
 
-vim.keymap.set('n', 'gE', vim.diagnostic.goto_prev, {})
-vim.keymap.set('n', 'ge', vim.diagnostic.goto_next, {})
-vim.keymap.set('n', '<C-n>', function() vim.cmd("bnext") end, {})
-vim.keymap.set('n', '<C-S-n>', function() vim.cmd("bprevious") end, {})
-vim.keymap.set('n', '<leader>bd', function() vim.cmd("Bdelete") end, {})
-
 require('plugins')
 require('lsp')
 require('tele')
@@ -42,4 +36,10 @@ require('material').setup({
     },
 })
 
+vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_prev, {})
+vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_next, {})
+vim.keymap.set('n', '<leader>bn', function() vim.cmd("bnext") end, {})
+vim.keymap.set('n', '<leader>bp', function() vim.cmd("bprevious") end, {})
+vim.keymap.set('n', '<C-n>', function() vim.cmd("bnext") end, {})
+vim.keymap.set('n', '<leader>bd', function() vim.cmd("Bdelete") end, {})
 vim.keymap.set('n', '<leader>tt', function() vim.cmd('NvimTreeToggle') end, {})
