@@ -1,4 +1,5 @@
 vim.g.mapleader = ';'
+vim.g.tmux_navigator_no_wrap = 1
 vim.wo.number = true
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
