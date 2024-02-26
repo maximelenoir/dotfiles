@@ -1,0 +1,27 @@
+keybinds clear-defaults=true {
+    normal {
+        bind "Ctrl e" { NewPane "Right"; }
+        bind "Ctrl h" { NewPane "Down"; }
+        bind "Alt Left" { MoveFocus "Left"; }
+        bind "Alt Right" { MoveFocus "Right"; }
+        bind "Alt Up" { MoveFocus "Up"; }
+        bind "Alt Down" { MoveFocus "Down"; }
+        bind "Ctrl x" { ToggleFocusFullscreen; }
+        bind "Ctrl k" { Clear; }
+    }
+}
+
+plugins {
+    tab-bar { path "tab-bar"; }
+    status-bar { path "status-bar"; }
+    strider { path "strider"; }
+    compact-bar { path "compact-bar"; }
+    session-manager { path "session-manager"; }
+}
+
+auto_layout false
+serialize_pane_viewport true
+scrollback_lines_to_serialize 0
+default_mode "normal"
+mouse_mode true
+scroll_buffer_size 100000
