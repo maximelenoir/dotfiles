@@ -39,6 +39,12 @@ return require('packer').startup(function(use)
         end
     }
     use 'christoomey/vim-tmux-navigator'
+    use {
+        "https://git.sr.ht/~swaits/zellij-nav.nvim",
+        config = function()
+            require("zellij-nav").setup()
+        end
+    }
 
     if packer_bootstrap then
         require('packer').sync()
