@@ -34,7 +34,7 @@ return require('packer').startup(function(use)
         config = function()
             require('trouble').setup({
                 auto_open = true,
-                auto_close = true,
+                auto_close = false
             })
         end
     }
