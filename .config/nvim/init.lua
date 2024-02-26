@@ -59,5 +59,6 @@ if vim.env.ZELLIJ ~= nil then
         vim.fn.system({ "zellij", "action", "switch-mode", "normal" })
     end
     vim.cmd('au FocusLost * lua unlock()')
+    vim.cmd('au VimLeave * lua unlock()')
     vim.cmd('au FocusGained * lua lock()')
 end
