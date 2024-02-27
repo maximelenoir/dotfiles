@@ -6,9 +6,17 @@ keybinds clear-defaults=true {
         bind "Alt Right" { MoveFocus "Right"; }
         bind "Alt Up" { MoveFocus "Up"; }
         bind "Alt Down" { MoveFocus "Down"; }
+        bind "Ctrl s" { SwitchToMode "scroll"; }
         bind "Ctrl x" { ToggleFocusFullscreen; }
         bind "Ctrl k" { Clear; }
         bind "Ctrl t" { NewTab; }
+    }
+    scroll {
+        bind "Up" { ScrollUp; }
+        bind "Down" { ScrollDown; }
+        bind "PageUp" { PageScrollUp; }
+        bind "PageDown" { PageScrollDown; }
+        bind "Esc" { SwitchToMode "normal"; }
     }
 }
 
