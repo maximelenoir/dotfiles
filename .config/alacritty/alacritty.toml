@@ -1,2 +1,5 @@
 [font]
 normal = { family = "InconsolataLGC Nerd Font Mono", style = "Regular" }
+
+[scrolling]
+history = 0
