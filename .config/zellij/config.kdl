@@ -10,6 +10,8 @@ keybinds clear-defaults=true {
         bind "Ctrl x" { ToggleFocusFullscreen; }
         bind "Ctrl k" { Clear; }
         bind "Ctrl t" { NewTab; }
+        bind "PageDown" { GoToNextTab; }
+        bind "PageUp" { GoToPreviousTab; }
     }
     scroll {
         bind "Up" { ScrollUp; }
