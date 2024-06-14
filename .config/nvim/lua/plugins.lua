@@ -1,52 +1,44 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
-
-return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
-    use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim' } } }
-    use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip'
-    use 'onsails/lspkind.nvim'
-    use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
-    use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' } }
-    use 'marko-cerovac/material.nvim'
-    use 'famiu/bufdelete.nvim'
-    use 'nvim-treesitter/nvim-treesitter'
-    use {
+require('lazy').setup({
+    'wbthomason/packer.nvim',
+    { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
+    'neovim/nvim-lspconfig',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-vsnip',
+    'hrsh7th/vim-vsnip',
+    'onsails/lspkind.nvim',
+    { 'nvim-lualine/lualine.nvim', dependencies = { 'kyazdani43/nvim-web-devicons' } },
+    { 'nvim-tree/nvim-tree.lua', dependencies = { 'nvim-tree/nvim-web-devicons' } },
+    'marko-cerovac/material.nvim',
+    'famiu/bufdelete.nvim',
+    'nvim-treesitter/nvim-treesitter',
+    {
         'folke/trouble.nvim',
-        requires = 'nvim-tree/nvim-web-devicons',
-        config = function()
-            require('trouble').setup({
-                auto_open = true,
-                auto_close = false
-            })
-        end
-    }
-    use 'christoomey/vim-tmux-navigator'
-    use {
-        "https://git.sr.ht/~swaits/zellij-nav.nvim",
-        config = function()
-            require("zellij-nav").setup()
-        end
-    }
-
-    if packer_bootstrap then
-        require('packer').sync()
-    end
-end)
+        dependencies = 'nvim-tree/nvim-web-devicons',
+        opts = {
+            modes = {
+                diagnostics = {
+                    auto_open = true,
+                    auto_close = false,
+                }
+            }
+        },
+    },
+    'sindrets/diffview.nvim',
+})
